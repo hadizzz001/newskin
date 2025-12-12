@@ -7,36 +7,37 @@ import "swiper/css/navigation";
 
 const reviews = [
   {
-    name: "John M.",
-    image: "https://randomuser.me/api/portraits/men/85.jpg",
+    name: "Sami Haroun",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
     text:
       "Amazing service! Fast delivery and great quality. The product arrived exactly as described. Highly satisfied!",
   },
   {
-    name: "Emily S.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "Nour El Hajj",
+    image: "https://randomuser.me/api/portraits/women/58.jpg",
     text:
       "Super smooth experience, will definitely come back. Customer support was fast and extremely professional.",
   },
   {
-    name: "David K.",
-    image: "https://randomuser.me/api/portraits/men/23.jpg",
+    name: "Hassan Choueiri",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
     text:
       "Excellent communication and the product is perfect. Really impressed with how fast it arrived.",
   },
   {
-    name: "Sarah J.",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    name: "Maya Bou Khalil",
+    image: "https://randomuser.me/api/portraits/women/32.jpg",
     text:
       "Loved everything about it. Great quality and amazing packing. Highly recommended for everyone!",
   },
   {
-    name: "Adam P.",
-    image: "https://randomuser.me/api/portraits/men/30.jpg",
+    name: "Rami Fakhoury",
+    image: "https://randomuser.me/api/portraits/men/46.jpg",
     text:
       "Very professional and super fast service. Everything went so smoothly, I’m definitely ordering again.",
   },
 ];
+
 
 const ReviewsSwiper = () => {
   return (

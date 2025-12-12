@@ -59,7 +59,7 @@ export default function NavBar() {
           <div className="flex-shrink-0 mr-10">
             <a href="/">
               <img
-                src="https://res.cloudinary.com/dnucihygt/image/upload/v1761759668/69007de9-2b7b-4e54-9c40-d60535e52891-removebg-preview_1_fshhfc.png"
+                src="https://res.cloudinary.com/dhgtlwqax/image/upload/v1765392845/skincare-logo-design-with-luxury-style-vector-graphics_719626-54-removebg-preview_1_byhk9x.png"
                 alt="Logo"
                 className="h-16"
                 style={{ maxHeight: '80px' }}
@@ -124,7 +124,7 @@ export default function NavBar() {
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <a href="/">
               <img
-                src="https://res.cloudinary.com/dnucihygt/image/upload/v1761759668/69007de9-2b7b-4e54-9c40-d60535e52891-removebg-preview_1_fshhfc.png"
+                src="https://res.cloudinary.com/dhgtlwqax/image/upload/v1765392845/skincare-logo-design-with-luxury-style-vector-graphics_719626-54-removebg-preview_1_byhk9x.png"
                 alt="Logo"
                 className="h-12"
               />

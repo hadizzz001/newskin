@@ -64,23 +64,23 @@ export default function RootLayout({
     property="og:description"
   />
   <meta
-    content="https://res.cloudinary.com/dnucihygt/image/upload/v1761759668/69007de9-2b7b-4e54-9c40-d60535e52891-removebg-preview_1_fshhfc.png"
+    content="https://res.cloudinary.com/dhgtlwqax/image/upload/v1765392845/skincare-logo-design-with-luxury-style-vector-graphics_719626-54-removebg-preview_1_byhk9x.png"
     name=""
     property="og:image"
   />
    
   <link
-    href="https://res.cloudinary.com/dnucihygt/image/upload/v1761759668/69007de9-2b7b-4e54-9c40-d60535e52891-removebg-preview_1_fshhfc.png"
+    href="https://res.cloudinary.com/dhgtlwqax/image/upload/v1765392845/skincare-logo-design-with-luxury-style-vector-graphics_719626-54-removebg-preview_1_byhk9x.png"
     rel="apple-touch-icon"
     sizes="180x180"
   />
   <link
-    href="https://res.cloudinary.com/dnucihygt/image/upload/v1761759668/69007de9-2b7b-4e54-9c40-d60535e52891-removebg-preview_1_fshhfc.png"
+    href="https://res.cloudinary.com/dhgtlwqax/image/upload/v1765392845/skincare-logo-design-with-luxury-style-vector-graphics_719626-54-removebg-preview_1_byhk9x.png"
     rel="icon"
     sizes="32x32" 
   />
   <link
-    href="https://res.cloudinary.com/dnucihygt/image/upload/v1761759668/69007de9-2b7b-4e54-9c40-d60535e52891-removebg-preview_1_fshhfc.png"
+    href="https://res.cloudinary.com/dhgtlwqax/image/upload/v1765392845/skincare-logo-design-with-luxury-style-vector-graphics_719626-54-removebg-preview_1_byhk9x.png"
     rel="icon"
     sizes="16x16" 
   /> 
