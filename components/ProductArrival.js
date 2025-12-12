@@ -8,24 +8,51 @@ import { useRouter } from "next/navigation";
 const YourComponent = () => {
   const [allTemps, setAllTemps] = useState([]);
   const router = useRouter();
+  const [title, setTitle] = useState('');
+
+  useEffect(() => {
+    const fetchTitle = async () => {
+      try {
+        const res = await fetch('/api/txt', { cache: 'no-store' });
+        const data = await res.json();
+
+        if (Array.isArray(data) && data.length > 0) {
+          setTitle(data[0].title);
+        }
+      } catch (error) {
+        console.error('Error fetching title:', error);
+      }
+    };
+
+    fetchTitle();
+  }, []);
 
   useEffect(() => {
     fetchCategories();
   }, []);
 
-  const fetchCategories = async () => {
-    try {
-      const response = await fetch('/api/products', { cache: 'no-store' });
-      if (response.ok) {
-        const data = await response.json();
-        setAllTemps(data.slice(-4));
-      } else {
-        console.error('Failed to fetch categories');
-      }
-    } catch (error) {
-      console.error('Error fetching categories:', error);
+const fetchCategories = async () => { 
+  try {
+    const response = await fetch('/api/products', { cache: 'no-store' });
+
+    if (response.ok) {
+      const data = await response.json();
+
+      // 🔥 Filter only products where sale == "yes"
+      const saleItems = data.filter(item => item.sale === "yes");
+
+      // 🔥 Take last 4 items that are on sale
+      setAllTemps(saleItems.slice(-4));
+      
+    } else {
+      console.error('Failed to fetch categories');
     }
-  };
+
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+  }
+};
+
 
   return (
     <div className="ProvidersIfSelectedProductMatchesFilter mt-4 px-4 sm:px-6 md:px-8">
@@ -36,10 +63,10 @@ const YourComponent = () => {
           {allTemps && allTemps.length > 0 ? (
             <>
 
-              <h1 className="uppercase text-center  my-6  px-4 myGrayCat1 mt-20 mb-10">
-                BEST SELLERS
+<h1 className="uppercase text-center px-4 myGrayCat1 mt-20 mb-10">
+        {title || 'Loading...'}
+      </h1>
 
-              </h1>
 
               <section className='mb-5' style={{ maxWidth: "100%" }}>
                 <Swiper

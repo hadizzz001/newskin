@@ -5,20 +5,23 @@ const MyCarousel = () => {
   const [slides, setSlides] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fetch dynamic banners
+  // Helper to inject q_50 into Cloudinary URL
+  const optimizeCloudinary = (url) => {
+    if (!url.includes("upload/")) return url;
+    return url.replace("upload/", "upload/q_50/");
+  };
+
   useEffect(() => {
     const fetchBanners = async () => {
       try {
         const res = await fetch("/api/banner");
         const data = await res.json();
 
-        // Convert API data → existing slide format
-        const formatted = data.map((item, index) => ({
-          img: item.img[0],
+        const formatted = data.map((item) => ({
+          img: optimizeCloudinary(item.img[0]), // 👈 Add quality here
           title: item.title,
           sub: item.sub,
           buttonText: "Shop Now",
-          textPosition: index % 2 === 0 ? "right" : "left",
         }));
 
         setSlides(formatted);
@@ -30,13 +33,12 @@ const MyCarousel = () => {
     fetchBanners();
   }, []);
 
-  // Auto-switch every 5s
   useEffect(() => {
     if (slides.length === 0) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
+    const interval = setInterval(
+      () => setCurrentIndex((prev) => (prev + 1) % slides.length),
+      5000
+    );
     return () => clearInterval(interval);
   }, [slides]);
 
@@ -54,7 +56,6 @@ const MyCarousel = () => {
               : "opacity-0 pointer-events-none"
           }`}
         >
-          {/* Image */}
           <img
             src={slide.img}
             alt={`Slide ${index + 1}`}
@@ -63,18 +64,11 @@ const MyCarousel = () => {
             }`}
           />
 
-          {/* Text & Button */}
-          <div
-            className={`absolute top-1/2 transform -translate-y-1/2 w-full px-6 md:px-12 lg:px-24 text-white flex flex-col space-y-4 ${
-              slide.textPosition === "right"
-                ? "items-end text-right"
-                : "items-start text-left"
-            }`}
-          >
-     
-
-            <h1 className="text-6xl md:text-4xl font-bold myGrayTit">{slide.title}</h1> 
-            <p className="text-lg md:text-2xl myGraySub ">{slide.sub}</p>
+          <div className="absolute top-1/2 transform -translate-y-1/2 w-full px-6 md:px-12 lg:px-24 text-white flex flex-col space-y-4 items-start text-left">
+            <h1 className="text-6xl md:text-4xl font-bold myGrayTit">
+              {slide.title}
+            </h1>
+            <p className="text-lg md:text-2xl myGraySub">{slide.sub}</p>
 
             <a
               href="/shop"
